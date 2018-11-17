@@ -1,10 +1,11 @@
 require 'pry'
+
 def reformat_languages(languages)
   new_hash = {}
   languages.each do |style, lang_hash|
-    binding.pry
     lang_hash.each do |lang, type_hash|
       type_hash.each do |sym, str|
+        binding.pry
         if new_hash.include?(lang)
           new_hash[lang][:style] << style
         else
