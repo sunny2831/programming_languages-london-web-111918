@@ -1,12 +1,12 @@
 def reformat_languages(languages)
-  reformated = {}
+  new_hash = {}
    languages.each do |style, list_of_languages|
     list_of_languages.each do |language, type_hash|
       type_hash.each do |header, type_data|
-        unless reformated[language].nil?
-          reformated[language][:style] << style
+        if new_hash.include?(language)
+           new_hash[language][:style] << style
         else
-          reformated[language] = { style: [style], type: type_data}
+          new_hash[language] = { style: [style], type: type_data}
         end
       end
     end
